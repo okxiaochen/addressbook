@@ -8,6 +8,8 @@ public final class Group{
         self::array[] = $name;
     }
 
+    //comment1;
+
 }
 
 ?>
