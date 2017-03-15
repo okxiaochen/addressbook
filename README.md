@@ -1,2 +1,2 @@
-# Contact
+# contact
 an OOP homework
