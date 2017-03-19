@@ -40,7 +40,7 @@ class Profile {
 	}
 
 	public function getEmail(){
-		reurn $this->email;
+		return $this->email;
 	}
 
 	public function getMobilephone(){
