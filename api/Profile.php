@@ -1,6 +1,7 @@
 <?php
 
-class Profile {
+class Profile 
+{
 	private $name=null;
 	private $mobile_phone=null;
 	private $tele_phone=null;
@@ -17,9 +18,10 @@ class Profile {
 	private $timestamp=null;
 
 
-	public function __construct($info = null){
+	public function __construct($info = null)
+	{
 
-		if($info){
+		if($info) {
 			foreach($info as $key=>$value){
 				$this->$key = $value;
 			}
@@ -31,69 +33,80 @@ class Profile {
 	}
 
 
-	private function setTimestamp(){
+	private function setTimestamp()
+	{
 		$this->timestamp = date("Y.m.d");
   	}
 
-	public function getName(){
+	public function getName()
+	{
 		return $this->name;
 	}
 
-	public function getEmail(){
+	public function getEmail()
+	{
 		return $this->email;
 	}
 
-	public function getMobilephone(){
+	public function getMobilephone()
+	{
 		return $this->mobile_phone;
 	}
 
-	public function getTelephone(){
+	public function getTelephone()
+	{
 		return $this->tele_phone;
 	}
 
-	public function getBirthday(){
+	public function getBirthday()
+	{
 		return $this->birthday;
 	}
 
-	public function getPhoto(){
+	public function getPhoto()
+	{
 		return $this->photo;
 	}
 
-	public function getAddress(){
+	public function getAddress()
+	{
 		return $this->address;
 	}
 
-	public function getCompany(){
+	public function getCompany()
+	{
 		return $this->company;
 	}
 
-	public function getPostcode(){
+	public function getPostcode()
+	{
 		return $this->postcode;
 	}
 
-	public function getGroup(){
+	public function getGroup()
+	{
 		return $this->group;
 	}
 
-	public function getRemarks(){
+	public function getRemarks()
+	{
 		return $this->remarks;
 	}
 
-	public function getInstantMessaging(){
+	public function getInstantMessaging()
+	{
 		return $this->instant_messaging;
 	}
 
-	public function getHomepage(){
+	public function getHomepage()
+	{
 		return $this->homepage;
 	}
 
-	public function getTimestamp(){
+	public function getTimestamp()
+	{
 		return $this->timestamp;
 	}
 
 
 }
-
-
-
-?>
