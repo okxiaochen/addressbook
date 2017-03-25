@@ -1,6 +1,6 @@
 <?php
 
-final class Group {
+abstract class Group{
 
     public static $array = null;
 
@@ -9,7 +9,7 @@ final class Group {
         self::$array[] = $name;
     }
 
-    public static function get()
+    public static function get($name)
     {
         return self::$array;
     }

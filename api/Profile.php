@@ -1,112 +1,36 @@
 <?php
 
-class Profile 
+interface Profile 
 {
-	private $name=null;
-	private $mobile_phone=null;
-	private $tele_phone=null;
-	private $birthday=null;
-	private $email=null;
-	private $photo=null;
-	private $address=null;
-	private $company=null;
-	private $postcode=null;
-	private $group=null;
-	private $remarks=null;
-	private $instant_messaging=null;
-	private $homepage=null;
-	private $timestamp=null;
+	public function __construct($info = null);
 
+	public function getName();
 
-	public function __construct($info = null)
-	{
+	public function getEmail();
 
-		if($info) {
-			foreach($info as $key=>$value){
-				$this->$key = $value;
-			}
-		} else {
-			$this->name = "hello";
-		}
+	public function getMobilephone();
 
-		$this->setTimestamp();
-	}
+	public function getTelephone();
 
+	public function getBirthday();
 
-	private function setTimestamp()
-	{
-		$this->timestamp = date("Y.m.d");
-  	}
+	public function getPhoto();
 
-	public function getName()
-	{
-		return $this->name;
-	}
+	public function getAddress();
 
-	public function getEmail()
-	{
-		return $this->email;
-	}
+	public function getCompany();
 
-	public function getMobilephone()
-	{
-		return $this->mobile_phone;
-	}
+	public function getPostcode();
 
-	public function getTelephone()
-	{
-		return $this->tele_phone;
-	}
+	public function getGroup();
 
-	public function getBirthday()
-	{
-		return $this->birthday;
-	}
+	public function getRemarks();
 
-	public function getPhoto()
-	{
-		return $this->photo;
-	}
+	public function getInstantMessaging();
 
-	public function getAddress()
-	{
-		return $this->address;
-	}
+	public function getHomepage();
 
-	public function getCompany()
-	{
-		return $this->company;
-	}
-
-	public function getPostcode()
-	{
-		return $this->postcode;
-	}
-
-	public function getGroup()
-	{
-		return $this->group;
-	}
-
-	public function getRemarks()
-	{
-		return $this->remarks;
-	}
-
-	public function getInstantMessaging()
-	{
-		return $this->instant_messaging;
-	}
-
-	public function getHomepage()
-	{
-		return $this->homepage;
-	}
-
-	public function getTimestamp()
-	{
-		return $this->timestamp;
-	}
+	public function getCreateTime();
 
 
 }
