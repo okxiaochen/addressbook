@@ -1,6 +1,0 @@
-{
-    "require": {
-        "monolog/monolog": "^1.22",
-        "guzzlehttp/guzzle": "~6.0"
-    }
-}
