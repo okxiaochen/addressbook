@@ -69,7 +69,7 @@ class Writer
                 // $this->writer->downloadAll($this->vcf);
                 header("Content-type: text/x-vcard");
                 header("Content-Disposition: attachment; filename=contacts.vcf");
-                header("Content-Length: " . mb_strlen($this->vcf, "utf-8"));
+                header("Content-Length: " . (mb_strlen($this->vcf, "utf-8")+3));
                 header("Connection: close");
                 echo $this->vcf;
                 break;

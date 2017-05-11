@@ -17,12 +17,17 @@ class Parser
 
     public function export()
     {
-        $group = "朋友";
+        $group = "同学";
         $list = GroupModel::getByName($group)->contactsArry;
         $mode = self::VCARD;
         $writer = new writer($mode);
         $writer->insertAll($list);
         $writer->download();
         return;
+    }
+
+    public function import()
+    {
+        
     }
 }
