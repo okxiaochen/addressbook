@@ -1,14 +1,12 @@
 <?php
 
+namespace cxliker\Reader;
+
 use League\Csv\Writer as CsvWriter;
 use League\Csv\Reader as CsvReader;
 use JeroenDesloovere\VCard\VCard as VCardWriter;
 use JeroenDesloovere\VCard\VCardParser as VCardReader;
-use app\index\model\Group as GroupModel;
-use app\index\model\Contact as ContactModel;
 
-define('PARSER_CSV', 'csv');
-define('PARSER_VCARD', 'vcard');
 
 class Reader
 {
@@ -18,18 +16,32 @@ class Reader
     public $mode = null;
     public $reader;
 
-    public function __construct($path, $mode)
+    public function __construct($path)
     {
-        $this->mode == $mode;
-        if ($mode === self::CSV) {
-            $this->reader = CsvReader::createFromPath($path);
-        } else {
-            $this->reader = VCardReader::parseFromFile($file);
+        $pos = strrpos($path, '.');
+        $suffix = substr($path, $pos + 1);
+        switch ($suffix) {
+            case "csv" :
+                $this->mode = self::CSV;
+                $this->reader = CsvReader::createFromPath($path);
+                break;
+            case "vcf" :
+                $this->mode = self::VCARD;
+                $this->reader = VCardReader::parseFromFile($file);
+                break;
         }
     }
 
-    public function fetchAll()
+    public function fetch()
     {
-
+        switch ($this->mode) {
+            case self::CSV :
+                $list = $this->reader->fetch();
+                break;
+            case self::VCARD :
+                $list = $this->reader->getCards();
+                break;
+        }
+        return;
     }
 }
